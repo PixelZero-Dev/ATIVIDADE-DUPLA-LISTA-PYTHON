@@ -1,14 +1,32 @@
 import os
 os.system('cls')
 
-vetor = []
+# Algoritmo para registrar temperaturas da semana
 
-match vetor:
-    case 1:
-        print('Muito frio')
-    case 2:
-        print('Frio')
-    case 3:
-        print('Agradável')
-    case _:
-        print('Muito quente')
+# Dias da semana
+dias = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+
+# Vetor (lista) para armazenar as temperaturas
+temperaturas = []
+
+print("Digite a temperatura de cada dia da semana:\n")
+
+# Lê as 7 temperaturas
+for i in range(7):
+    temp = float(input(f"Temperatura de {dias[i]}: "))
+    temperaturas.append(temp)
+
+# Calcula a média, maior e menor
+media = sum(temperaturas) / len(temperaturas)
+maior = max(temperaturas)
+menor = min(temperaturas)
+
+# Exibe os resultados
+print("\n========== RESULTADOS ==========")
+print("Temperaturas registradas:")
+for i in range(7):
+    print(f"{dias[i]}: {temperaturas[i]}°C")
+
+print(f"\nMédia da semana: {media:.2f}°C")
+print(f"Maior temperatura: {maior}°C")
+print(f"Menor temperatura: {menor}°C")
